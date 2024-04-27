@@ -9,4 +9,4 @@ public record RepositoryResponse(String id,
                                  String description) {
 }
 
-/** Mapeamento dos atributos que serão retornados na requisição
+/** Mapeamento dos atributos que serão retornados na requisição */
