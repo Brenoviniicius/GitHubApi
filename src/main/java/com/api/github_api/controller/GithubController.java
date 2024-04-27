@@ -3,31 +3,28 @@ package com.api.github_api.controller;
 import com.api.github_api.HTTPclient.GithubClient;
 import com.api.github_api.HTTPclient.RepositoryResponse;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/api/v1")
 public class GithubController {
 
-    private GithubClient githubClient;
+    private final GithubClient githubClient;
 
     public GithubController(GithubClient githubClient) {
         this.githubClient = githubClient;
     }
 
-    @GetMapping("/repos")
-    public ResponseEntity<List<RepositoryResponse>> ListRepos(@RequestHeader("token") String token) {
+    @GetMapping(value = "/repos")
+    public ResponseEntity<List<RepositoryResponse>> listRepos(@RequestHeader("token") String token,@RequestParam(value = "visibility", defaultValue = "public") String visibility) {
         var repos = githubClient.listRepos(
                 "Bearer" + token,
-                "null",
-                "all");
-
+                null,
+                "public");
         return ResponseEntity.ok(repos);
     }
 }
+
 
 /**Mapeamento do controller da aplicação */
