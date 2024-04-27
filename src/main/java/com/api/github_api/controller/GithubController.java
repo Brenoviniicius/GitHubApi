@@ -11,7 +11,7 @@ import java.util.List;
 public class GithubController {
 
     @GetMapping("/repos")
-    public ResponseEntity<List<RespositoryResponse>> ListRepos() {
+    public ResponseEntity<List<RepositoryResponse>> ListRepos() {
         return null;
     }
 }
