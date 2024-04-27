@@ -1,4 +1,4 @@
-package com.api.github_api.controller;
+package com.api.github_api.HTTPclient;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

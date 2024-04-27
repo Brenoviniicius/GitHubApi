@@ -1,6 +1,7 @@
 package com.api.github_api.controller;
 
 import com.api.github_api.HTTPclient.GithubClient;
+import com.api.github_api.HTTPclient.RepositoryResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
